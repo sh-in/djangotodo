@@ -1,6 +1,6 @@
 from pyexpat import model
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from .models import Todoapp
 
@@ -8,3 +8,7 @@ from .models import Todoapp
 class TodoappList(ListView):
     model = Todoapp
     context_object_name = "tasks"
+
+class TodoappDetail(DetailView):
+    model = Todoapp
+    context_object_name = "task"
