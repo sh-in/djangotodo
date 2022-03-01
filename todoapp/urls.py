@@ -1,6 +1,7 @@
+from unicodedata import name
 from django.urls import path
-from . import views
+from .views import TodoappList
 
 urlpatterns = [
-    path("", views.index),
+    path("", TodoappList.as_view(), name="list"),
 ]
